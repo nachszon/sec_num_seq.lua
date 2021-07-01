@@ -1,0 +1,46 @@
+#!/usr/local/bin/lua
+--sec_num_seq.lua
+--Nachszon, lipiec 2021
+--Program wyznacza drugą co do wielkości liczbę w ciągu
+--Ciąg pobierany jest jako parametr funkcji
+--parametrem funkcji jest tablica jednowymiarowa
+
+function func_show_sec (tab_seq)
+    
+    --wyczyszczenie terminala
+    os.execute("clear")
+    
+    --obliczenie ilości elementów tablicy
+    max_element=#tab_seq
+ 
+    --prezentacja oryginalnego ciągu
+    print ("Podany ciąg liczb:")
+    for element=1,max_element do
+        io.write(tab_seq[element].." ")
+        end
+    io.write("\n")
+    
+    --sortowanie tablicy - od wielkości najmniejszej do największej
+    table.sort(tab_seq)
+    
+    --prezentacja posortowanego ciągu od wielkości najmniejszej do największej
+    print ("\nPosortowany ciąg liczb:")
+    for element=1,max_element do
+        io.write(tab_seq[element].." ")
+        end
+    io.write("\n")
+    
+    --wyliczenie drugiego co do wielkości elementu ciągu
+    sec_element=max_element-1
+    
+    --prezentacja drugiego co do wielkości elementu ciągu
+    print ("\nPrzedostatni element ciągu:")
+    print(tab_seq[sec_element])
+        
+    
+    end
+
+
+
+
+func_show_sec ({9,16,20,3,4,8,1,15})
